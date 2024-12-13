@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Embed Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Onboarding</h1>
+        <p>Please perform the onboarding via our partner below:</p>
+        <iframe id="zenoo-embed" allow="camera *; microphone *"></iframe>
+    </div>
+    
+    <script
+    src="https://onboard-test-ie.zenoo.io/fb90552ee8d617afc8ab7fc00ba784992d8873c9/assets/embed.js"
+    iframe-id="zenoo-embed">
+
+        navigator.mediaDevices.getUserMedia({audio: true, video: true})
+                    .then(function(stream) {
+                    console.log('Get User Media - Got stream');
+                    })
+                    .catch(function(err) {
+                    console.log('Get User Media - failed with error');
+                    });
+
+    </script>
+</body>
+</html>
