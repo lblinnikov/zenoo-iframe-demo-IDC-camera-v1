@@ -14,21 +14,23 @@
         <iframe allow="camera *; microphone *" id="zenoo-embed" width="300" height="0"></iframe>
     </div>
 
-<script
-  src="https://onboard.idnow.test-eu.zenoo.io/cb8662a84f57867dfbc0bf60fab110b979e4b5c5/assets/embed.js"
-  iframe-id="zenoo-embed"
-  onFlowTerminate="console.log('Now you can terminate the parent session.')"
->
+        <script>
+            const script = document.createElement('script');
+            script.src = "https://onboard.idnow.test-eu.zenoo.io/cb8662a84f57867dfbc0bf60fab110b979e4b5c5/assets/embed.js";
+            script.setAttribute('iframe-id', 'zenoo-embed');
+            script.setAttribute('onFlowTerminate', 'console.log('Now you can terminate the parent session.')');        // revisit
+
+            document.body.appendChild(script);
 
             navigator.mediaDevices.getUserMedia({audio: true, video: true})
-            .then(function(stream) {
-            console.log('Get User Media - Got stream');
-            })
-            .catch(function(err) {
-            console.log('Get User Media - failed with error');
-            });
-    
-</script>
+                    .then(function(stream) {
+                    console.log('Get User Media - Got stream');
+                    })
+                    .catch(function(err) {
+                    console.log('Get User Media - failed with error');
+                    });
+
+        </script>
 
 
 </body>
