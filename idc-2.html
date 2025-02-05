@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Embed Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>IDcheck</h1>
+        <a href="index.html">Home</a>
+        <p>IDcheck - Please perform the onboarding via our partner below and observe event when reaching terminal "Thank You" page:</p>
+        <iframe allow="camera *; microphone *" id="zenoo-embed" width="300" height="0"></iframe>
+    </div>
+
+        <script>
+            const script = document.createElement('script');
+            script.src = "https://onboard.idnow.test-eu.zenoo.io/cb8662a84f57867dfbc0bf60fab110b979e4b5c5/assets/embed.js";
+            script.setAttribute('iframe-id', 'zenoo-embed');
+            script.setAttribute('onFlowTerminate', 'console.log("Now you can terminate the parent session.")');
+
+            document.body.appendChild(script);
+
+            navigator.mediaDevices.getUserMedia({audio: true, video: true})
+                    .then(function(stream) {
+                    console.log('Get User Media - Got stream');
+                    })
+                    .catch(function(err) {
+                    console.log('Get User Media - failed with error');
+                    });
+
+        </script>
+
+
+</body>
+</html>
