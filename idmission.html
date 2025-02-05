@@ -17,8 +17,17 @@
 <script
   src="https://onboard.idnow.test-eu.zenoo.io/2c4d6cd103f3ccead08fdf8d397d7c002102bb5d/assets/embed.js"
   iframe-id="zenoo-embed"
-  onFlowTerminate="console.log('Now you can terminate the parent session.')"
-></script>
+>
+
+                  window.onload = () => {
+                window.zenooAppSupports['zenoo-embed'].addEventListener('flow:terminal', (e) => {
+                  if (e?.reason === 'redirection') {
+                    console.log('Now you can terminate the parent session.')
+                  }
+                })
+              }
+    
+</script>
 
 
 </body>
