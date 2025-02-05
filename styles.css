@@ -10,6 +10,10 @@ body {
     padding: 20px;
 }
 
+a {
+    font-size: 20px;
+}
+
 .container {
     background: white;
     border-radius: 10px;
