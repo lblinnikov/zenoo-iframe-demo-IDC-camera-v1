@@ -16,8 +16,15 @@
 
         <script
           src="https://onboard.idnow.test-eu.zenoo.io/cb8662a84f57867dfbc0bf60fab110b979e4b5c5/assets/embed.js"
-          iframe-id="zenoo-embed"
-          onFlowTerminate="console.log('Now you can terminate the parent session.')">
+          iframe-id="zenoo-embed">
+
+              window.onload = () => {
+                window.zenooAppSupports['zenoo-embed'].addEventListener('flow:terminal', (e) => {
+                  if (e?.reason === 'redirection') {
+                    console.log('Now you can terminate the parent session.')
+                  }
+                })
+              }
 
             navigator.mediaDevices.getUserMedia({audio: true, video: true})
                     .then(function(stream) {
