@@ -17,7 +17,9 @@
         <script
           src="https://onboard.idnow.test-eu.zenoo.io/cb8662a84f57867dfbc0bf60fab110b979e4b5c5/assets/embed.js"
           iframe-id="zenoo-embed">
+        </script>
 
+        <script>
           window.onload = () => {
             window.zenooAppSupports['zenoo-embed'].addEventListener('flow:redirection', (e) => {
               console.log('Redirect has happened, event: ', e)  
@@ -34,7 +36,6 @@
                     .catch(function(err) {
                     console.log('Get User Media - failed with error');
                     });
-
         </script>
 
 
