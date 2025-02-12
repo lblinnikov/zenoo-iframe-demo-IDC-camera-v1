@@ -20,6 +20,7 @@
 
           window.onload = () => {
             window.zenooAppSupports['zenoo-embed'].addEventListener('flow:redirection', (e) => {
+              console.log('Redirect has happened, event: ', e)  
               if (e?.source === 'UrlRedirectInteraction') {
                 console.log('Zenoo Redirect happened -> Now you can terminate the parent session.')
               }
