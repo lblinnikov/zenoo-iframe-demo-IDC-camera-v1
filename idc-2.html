@@ -22,9 +22,9 @@
         <script>
           window.onload = () => {
             window.zenooAppSupports['zenoo-embed'].addEventListener('flow:redirection', (e) => {
-              console.log('Redirect has happened, event: ', e, e.detail.source, e.detail.redirectUrl)  
+              console.log('SOME Redirect has happened, event: ', e, e?.detail?.source, e?.detail?.redirectUrl)  
               if (e?.detail?.source === 'IdNowCisInteraction') {                                                   // build it based on e.detail.source...
-                console.log('Zenoo Redirect happened -> Now you can terminate the parent session.')
+                console.log('IMPORTANT (CIS) Redirect happened -> Now you can terminate the parent session.')
               }
             })
           }
