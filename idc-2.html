@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Embed Page</title>
+    <title>Zenoo x IDcheck | Embed Page</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
         <h1>IDcheck</h1>
         <a href="index.html">Home</a>
-        <p>IDcheck - Please perform the onboarding via our partner below and observe event when reaching terminal "Thank You" page:</p>
+        <p>IDcheck - Please perform the onboarding via our partner below and observe event when reaching final redirect made by CIS interaction:</p>
         <iframe allow="camera *; microphone *" id="zenoo-embed" width="300" height="0"></iframe>
     </div>
 
@@ -22,7 +22,7 @@
         <script>
           window.onload = () => {
             window.zenooAppSupports['zenoo-embed'].addEventListener('flow:redirection', (e) => {
-              console.log('SOME Redirect has happened, event: ', e, e?.detail?.source, e?.detail?.redirectUrl)  
+              //console.log('SOME Redirect has happened, event: ', e, e?.detail?.source, e?.detail?.redirectUrl)  
               if (e?.detail?.source === 'IdNowCisInteraction') {                                                   // build it based on e.detail.source...
                 console.log('IMPORTANT (CIS) Redirect happened -> Now you can terminate the parent session.')
               }
