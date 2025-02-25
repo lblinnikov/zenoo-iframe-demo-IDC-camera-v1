@@ -20,7 +20,7 @@
 >
 
                   window.onload = () => {
-                window.zenooAppSupports['zenoo-embed'].addEventListener('flow:terminal', (e) => {
+                window.zenooAppSupports['zenoo-embed'].addEventListener('flow:redirection', (e) => {
                   if (e?.reason === 'redirection') {
                     console.log('Now you can terminate the parent session.')
                   }
