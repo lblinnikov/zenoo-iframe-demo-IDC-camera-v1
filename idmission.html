@@ -19,11 +19,9 @@
   iframe-id="zenoo-embed"
 >
 
-                  window.onload = () => {
+              window.onload = () => {
                 window.zenooAppSupports['zenoo-embed'].addEventListener('flow:redirection', (e) => {
-                  if (e?.reason === 'redirection') {
                     console.log('Now you can terminate the parent session.')
-                  }
                 })
               }
     
