@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zenoo x IDmission | Embed Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>IDmission</h1>
+        <a href="index.html">Home</a>
+        <p>IDmission - Please perform the onboarding via our partner below and observe event when reaching terminal "Thank You" page:</p>
+        <iframe allow="camera; microphone" id="zenoo-embed" width="300" height="0"></iframe>
+    </div>
+
+<script
+  src="https://onboard-test-ie.zenoo.io/2c4d6cd103f3ccead08fdf8d397d7c002102bb5d/assets/embed.js"
+  iframe-id="zenoo-embed"
+  onFlowTerminate="handleFlowTermination()"
+></script>
+
+<script>
+  function handleFlowTermination() {
+    console.log('Now you can terminate the parent session, because REDIRECT or TERMINATE page has been reached.');
+  }
+
+  window.onload = () => {
+    const embedId = 'zenoo-embed';
+
+    if (window.zenooAppSupports && window.zenooAppSupports[embedId]) {
+      window.zenooAppSupports[embedId].addEventListener('flow:redirection', (e) => {
+        handleFlowTermination();
+      });
+    }
+  };
+</script>
+
+
+
+</body>
+</html>
