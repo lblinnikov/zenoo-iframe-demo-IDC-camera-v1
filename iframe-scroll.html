@@ -21,10 +21,15 @@
     </style>
 </head>
 <body>
-    <script
-    src="https://onboard.idnow.test-eu.zenoo.io/2842217c84639b8512eb8792556ced1b4cbd3ec6/assets/embed.js"
-    iframe-id="zenoo-embed"
-  ></script>
+    
+<script
+  src="https://onboard.idnow.test-eu.zenoo.io/2842217c84639b8512eb8792556ced1b4cbd3ec6/assets/embed.js"
+  iframe-id="zenoo-embed"
+></script>
+    
+<iframe allow="camera; microphone" id="zenoo-embed" width="110%" height="0"></iframe>
+
+    
     <script>
                     navigator.mediaDevices.getUserMedia({audio: true, video: true})
                     .then(function(stream) {
@@ -36,6 +41,5 @@
         </script>
 
     </script>
-    <iframe allow="camera; microphone" id="zenoo-embed"></iframe>
 </body>
 </html>
