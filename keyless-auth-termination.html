@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authentication | Embed Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Authentication</h1>
+        <p>Please go through the flow below and observe event when reaching terminal "Thank You" page. There is a Levs user hard-coded in the flow, regardless, you have to get to Thank You page and that should fire an even in the Console - check DevTools Console tab for it:</p>
+        <iframe allow="camera; microphone" id="zenoo-embed" width="300" height="0"></iframe>
+    </div>
+    
+<script
+  src="https://onboard.orchestrator.idnow.io/2151ca6760c49a30d79e0055cea9f0ccde38a1dc/assets/embed.js"
+  iframe-id="zenoo-embed"
+  onFlowTerminate="console.log('Flow has finished - now you can terminate the parent session!')"
+></script>
+
+
+</body>
+</html>
